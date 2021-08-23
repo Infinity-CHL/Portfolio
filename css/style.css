@@ -48,7 +48,7 @@ a {
 img {
     max-width: 100%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);;
-    transition: 0.3s all linear;
+    transition: 0.3s box-shadow linear;
 }
 
 img:hover {
@@ -102,7 +102,7 @@ body {
     font-weight: 700;
     border-radius: 6px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);
-    transition: 0.1s all linear;
+    transition: 0.1s box-shadow linear;
 }
 
 .nav-item:hover {
@@ -112,7 +112,7 @@ body {
 
 .nav-link {
     color: #828282;
-    transition: 0.5s all linear;
+    transition: 0.5s color linear;
 }
 
 .nav-link:hover {
@@ -120,9 +120,6 @@ body {
     color:#070707;
 }
 
-#about,#skills,#portfolio,#contacts {
-    transition: 0.3s all linear;
-}
 
 /* Hero */
 
@@ -170,6 +167,11 @@ body {
     font-weight: 700;
     color: #828282;
     border-right: 1px solid #000000;
+    transition: color .2s linear;
+}
+
+.hero-lng-ru:hover {
+    color: #070707;
 }
 
 .hero-lng-en {
@@ -177,6 +179,11 @@ body {
     line-height: 20px;
     font-weight: 700;
     color: #070707;
+    transition: color .2s linear;
+}
+
+.hero-lng-en:hover {
+    color: #828282;
 }
 
 .hero-content-bottom svg {
@@ -196,17 +203,12 @@ body {
     width: 300px;
     height: 300px;
     border-radius: 100%;
-    background-image:url(../img/hero-img\ \(2\).jpg);
-    background-position: 370px;
+    background-image:url(../img/hero-image.jpg);
+    background-position: 395px;
     background-size: cover;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);
-    transition: all 0.3s linear;
 }
 
-/* .hero-avatar:hover {
-    border-radius: 100%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
-} */
 
 .hero-img {
     width: 500px;
@@ -216,6 +218,7 @@ body {
 
 
 .hero-content-quote {
+    position: relative;
     max-width: 490px;
     padding: 50px;
     margin: auto;
@@ -225,6 +228,18 @@ body {
     line-height: 1.5;
     font-weight: 500;
     background-color: #f6f6f6;
+}
+
+.hero-content-quote::after {
+    content: "";
+    position: absolute;
+    bottom: 85%;
+    right: -4%;
+    background-image: url(../img/right-quotes-symbol.svg);
+    background-repeat:no-repeat;
+    background-size: 50px 50px;
+    width: 50px;
+    height: 50px;
 }
 
 /* About me */
@@ -354,7 +369,7 @@ body {
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2), 0 4px 6px rgba(0,0,0,0.2);
-    transition: all 0.3s linear;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 
@@ -372,7 +387,6 @@ body {
 }
 
 .skills-item-content:hover {
-    border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2), 0 16px 20px rgba(0,0,0,0.2);
 }
 
@@ -409,6 +423,9 @@ body {
     text-align: center;
     text-decoration-line: underline;
     color: #070707;
+    transition-property: color,text-decoration;
+    transition-duration: .2s;
+    transition-timing-function: linear;
 }
 
 .section-portfolio-link:hover {
@@ -437,17 +454,6 @@ body {
     font-weight: 500;
 }
 
-.section-contacts-btn {
-    padding: 13px 29px;
-    margin-bottom: 79px;
-    border-radius: 60px;
-    border-style: none;
-    font-size: 18px;
-    line-height: 22px;
-    font-weight: 700;
-    color: #fff;
-    background-color: #070707;
-}
 
 .section-contacts-list {
     display: flex;
@@ -460,6 +466,11 @@ body {
     width: 41px;
     height: 41px;
     background-repeat: no-repeat;
+    transition: transform .1s ease-in-out;
+}
+
+.section-contacts-item:hover {
+    transform: scale(1.1);
 }
 
 .contacts-icon-link {
@@ -475,12 +486,25 @@ body {
     line-height: 17px;
 }
 
+.contacts-bottom-link p {
+    margin: 0;
+}
+
 .contacts-link {
     color: #828282;
+    transition-property: color, border-bottom;
+    transition-duration: .2s;
+    transition-timing-function: linear;
+}
+
+.contacts-link:hover {
+    color: #070707;
+    border-bottom: 1px solid #070707;
 }
 
 .link-icon-in {
-    background-image: url(../img/in.svg);
+    background-image: url(../img/telegram.svg);
+    background-size: 41px 41px;
 }
 
 .link-icon-ins {
@@ -488,11 +512,12 @@ body {
 }
 
 .link-icon-be {
-    background-image: url(../img/behance.svg);
+    background-image: url(../img/github.svg);
 }
 
-.link-icon-dr {
-    background-image: url(../img/drabble.svg);
-}
+/* .link-icon-dr {
+    background-image: url(../img/vk-logo.svg);
+    background-size: 42px 42px;
+} */
 
 
